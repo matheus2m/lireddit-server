@@ -2,6 +2,7 @@ import { Post } from './entities/Post';
 import { __prod__ } from './constants';
 import { MikroORM } from "@mikro-orm/core";
 import path from 'path';
+import { User } from './entities/User';
 
 export default {
   migrations: {
@@ -9,7 +10,7 @@ export default {
     pattern: /^[\w-]+\d+\.[tj]s$/,
   },
   dbName: 'graphql-ts',
-  entities: [Post],
+  entities: [Post, User],
   user: 'postgres',
   password: 'docker',
   type: 'postgresql',
